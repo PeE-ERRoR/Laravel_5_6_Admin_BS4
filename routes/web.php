@@ -29,3 +29,5 @@ Route::get('generate_pdf','HomeController@generatePDF');
 Route::get('admin/profile', function () {
     //
 })->middleware('admin');
+
+Route::get('get_user_api', 'HomeController@getUserAPI');

@@ -5,6 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use PDF;
 
+use App\User;
+use App\Http\Resources\UserResource;
+use App\Http\Resources\UserCollection;
+
 class HomeController extends Controller
 {
     /**
@@ -35,5 +39,20 @@ class HomeController extends Controller
         return $pdf->stream();
         return $pdf->download('hdtuto.pdf');
 
+    }
+
+    public function getUserAPI($value='')
+    {
+      // return new UserCollection(User::all());
+      // return new UserResource(User::all());
+      // return UserResource::collection(User::all());
+      $data = $this->API()->all();
+      return $data;
+    }
+
+    public function API($value='')
+    {
+      $data = new UserResource(User::select('id')->get());
+      return $data;
     }
 }
