@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="{{ asset('./assets/plugins/custom-scrollbar/jquery.mCustomScrollbar.min.css') }}">
     <!-- Hamburger Menu -->
     <link rel="stylesheet" href="{{ asset('./assets/css/hamburgers/hamburgers.css') }}">
-    <link rel="stylesheet" href="{{ asset('./assets/demo/css/ui-icons-batch-icons.css') }}">
+    <link rel="stylesheet" href="{{ asset('./assets/demo/ui-icons-batch-icons.css') }}">
     <!-- QuillPro Styles -->
     <link rel="stylesheet" href="{{ asset('./assets/css/quillpro/quillpro.css') }}">
 </head>
@@ -505,7 +505,7 @@
     							<li class="nav-item dropdown">
     								<a class="nav-link dropdown-toggle" id="navbar-dropdown-navbar-profile" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
     									<div class="profile-name">
-    										Johanna Quinn
+    										{{ Auth::user()->name }}
     									</div>
     									<div class="profile-picture bg-gradient bg-primary has-message float-right">
     										<img src="assets/img/profile-pic.jpg" width="44" height="44">
@@ -520,13 +520,23 @@
     										</a>
     									</li>
     									<li><a class="dropdown-item" href="profiles-member-profile.html">Settings</a></li>
-    									<li><a class="dropdown-item" href="sisu-lock-screen.html">Logout</a></li>
+    									<li><a class="dropdown-item" href="{{ route('logout') }}" onclick="event.preventDefault();document.getElementById('logout-form').submit();">Logout</a></li>
     								</ul>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                       @csrf
+                    </form>
     							</li>
     						</ul>
     					</div>
     				</nav>
-            <main class="main-content p-5" role="main">
+            <nav aria-label="breadcrumb">
+              <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Library</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Data</li>
+              </ol>
+            </nav>
+            <main class="main-content pt-3 mb-3" role="main">
               @yield('content')
     				</main>
     			</div>
