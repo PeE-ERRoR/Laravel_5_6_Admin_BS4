@@ -5,8 +5,19 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+require('../../../node_modules/chart.js');
+require('../../../node_modules/jquery');
 require('./bootstrap');
-
+require('../plugins/chartjs/chart.bundle.min.js');
+require('../plugins/jquery_visible/jquery.visible.min.js');
+require('../plugins/jquery-mask/jquery.mask.min.js');
+// require('../plugins/jvmaps');
+require('../plugins/timelify/js/jquery.timelify.min.js');
+require('../plugins/velocity/velocity.min.js');
+// require('../plugins/velocity/velocity.ui.min.js');
+// require('../plugins/custom-scrollbar/jquery.mCustomScrollbar.concat.min.js');
+require('./misc/holder.min.js');
+require('./misc/ie10-viewport-bug-workaround.js');
 window.Vue = require('vue');
 
 /**
