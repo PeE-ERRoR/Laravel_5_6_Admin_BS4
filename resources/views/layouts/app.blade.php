@@ -505,7 +505,7 @@
     							<li class="nav-item dropdown">
     								<a class="nav-link dropdown-toggle" id="navbar-dropdown-navbar-profile" data-toggle="dropdown" data-flip="false" aria-haspopup="true" aria-expanded="false">
     									<div class="profile-name">
-    										{{ Auth::user()->name }}
+    										{{-- {{ Auth::user()->name }} --}}
     									</div>
     									<div class="profile-picture bg-gradient bg-primary has-message float-right">
     										<img src="assets/img/profile-pic.jpg" width="44" height="44">
