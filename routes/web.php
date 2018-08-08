@@ -32,13 +32,9 @@ Route::get('admin/profile', function () {
 
 // API
 Route::get('get_user_api', 'HomeController@getUserAPI');
-// API Controller
-Route::apiResources([
-    'photos' => 'PhotoController',
-    'posts' => 'PostController'
-]);
 
 Route::resource('profile', 'UserController')->middleware('auth');
+Route::resource('post', 'PostController')->middleware('auth');
 
 Route::get('hello', function () {
   return abort(404);
