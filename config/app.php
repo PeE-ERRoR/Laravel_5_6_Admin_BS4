@@ -153,6 +153,11 @@ return [
 
          // DomPDF
          Barryvdh\DomPDF\ServiceProvider::class,
+
+         // facebook
+         Laravel\Socialite\SocialiteServiceProvider::class,
+
+         Yajra\DataTables\DataTablesServiceProvider::class,
         /*
          * Application Service Providers...
          */
@@ -211,6 +216,8 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         'PDF' => Barryvdh\DomPDF\Facade::class,
+        'Socialite' => Laravel\Socialite\Facades\Socialite::class,
+        'Datatable' => Yajra\Datatables\Facades\Datatables::class,
     ],
 
 ];

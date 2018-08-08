@@ -59,6 +59,11 @@
                                     Forgot Your Password?
                                 </a>
                             </div>
+                            <div class="col-md-8 offset-md-4">
+                              <br>
+                              <a href="{{url('facebook/redirect')}}" class="btn btn-primary">Login with Facebook</a>
+                              <a href="{{url('google/redirect')}}" class="btn btn-primary">Login with Google</a>
+                            </div>
                         </div>
                     </form>
                 </div>
